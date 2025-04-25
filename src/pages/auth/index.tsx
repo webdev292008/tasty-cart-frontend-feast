@@ -19,14 +19,26 @@ export default function AuthPage() {
     setLoading(true);
     
     try {
-      const { error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
 
       if (error) throw error;
       
-      navigate("/admin");
+      // Only allow specific admin email to access admin portal
+      const adminEmails = [
+        "admin@example.com", 
+        // Add other admin email addresses here
+      ];
+
+      if (data.user && adminEmails.includes(data.user.email || '')) {
+        navigate("/admin");
+      } else {
+        // Sign out and show error if not an admin
+        await supabase.auth.signOut();
+        throw new Error("Access denied. Insufficient permissions.");
+      }
     } catch (error: any) {
       toast({
         title: "Error",
