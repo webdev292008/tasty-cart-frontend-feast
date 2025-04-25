@@ -50,7 +50,15 @@ export default function OrdersPage() {
       return;
     }
 
-    setOrders(data);
+    // Process the data to ensure items is properly parsed as an array
+    const processedOrders = data.map(order => ({
+      ...order,
+      items: Array.isArray(order.items) ? order.items : 
+              typeof order.items === 'string' ? JSON.parse(order.items) : 
+              order.items || []
+    })) as Order[];
+
+    setOrders(processedOrders);
   };
 
   const updateOrderStatus = async (orderId: string, status: string) => {
@@ -94,8 +102,8 @@ export default function OrdersPage() {
               <TableCell>{new Date(order.created_at).toLocaleString()}</TableCell>
               <TableCell>{order.customer_name}</TableCell>
               <TableCell>
-                {order.items.map((item: any) => (
-                  <div key={item.id}>{item.quantity}x {item.name}</div>
+                {order.items.map((item: any, index: number) => (
+                  <div key={item.id || index}>{item.quantity}x {item.name}</div>
                 ))}
               </TableCell>
               <TableCell>${order.total_amount.toFixed(2)}</TableCell>
