@@ -29,6 +29,7 @@ export default function AuthPage() {
       // Only allow specific admin email to access admin portal
       const adminEmails = [
         "admin@example.com", 
+        "webdev292008@gmail.com", // Added your email to the admin list
         // Add other admin email addresses here
       ];
 
