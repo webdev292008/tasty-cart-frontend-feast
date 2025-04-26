@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
@@ -6,6 +5,7 @@ import { useCart } from "@/context/CartContext";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import Gallery from "@/components/Gallery";
 
 interface MenuItem {
   id: string;
@@ -50,10 +50,10 @@ const Index = () => {
       name: item.name,
       description: item.description,
       price: item.price,
-      image: item.image_url, // Use image_url as the image property
+      image: item.image_url,
       image_url: item.image_url,
-      category: item.category || 'default', // Provide default values for required properties
-      available: item.available !== false // Default to true if not specified
+      category: item.category || 'default',
+      available: item.available !== false
     });
   };
 
@@ -171,7 +171,8 @@ const Index = () => {
           )}
         </section>
         
-        {/* Admin Login Link */}
+        <Gallery />
+        
         <div className="mt-12 text-center">
           <p className="text-sm text-gray-500 mb-2">Admin Access</p>
           <Link to="/auth" className="text-sm text-blue-600 hover:text-blue-800">

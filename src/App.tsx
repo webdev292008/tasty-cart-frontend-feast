@@ -12,6 +12,7 @@ import AuthPage from "./pages/auth";
 import AdminLayout from "./components/admin/AdminLayout";
 import OrdersPage from "./pages/admin/OrdersPage";
 import MenuPage from "./pages/admin/MenuPage";
+import GalleryPage from "./pages/admin/GalleryPage";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
               <Route index element={<OrdersPage />} />
               <Route path="orders" element={<OrdersPage />} />
               <Route path="menu" element={<MenuPage />} />
+              <Route path="gallery" element={<GalleryPage />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
