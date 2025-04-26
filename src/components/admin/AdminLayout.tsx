@@ -4,7 +4,7 @@ import { useNavigate, Link, Outlet } from "react-router-dom";
 import { Sidebar, SidebarContent, SidebarProvider } from "@/components/ui/sidebar";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
-import { LayoutDashboard, Menu, LogOut } from "lucide-react";
+import { LayoutDashboard, Menu, LogOut, ArrowLeft } from "lucide-react";
 
 export default function AdminLayout() {
   const navigate = useNavigate();
@@ -56,8 +56,19 @@ export default function AdminLayout() {
                 </div>
               </div>
             </div>
-            <div className="mt-auto p-4">
-              <Button onClick={handleSignOut} variant="ghost" className="w-full justify-start">
+            <div className="mt-auto p-4 space-y-2">
+              {/* New Back to Website button */}
+              <Link to="/" className="w-full">
+                <Button variant="ghost" className="w-full justify-start">
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  Back to Website
+                </Button>
+              </Link>
+              <Button 
+                onClick={handleSignOut} 
+                variant="ghost" 
+                className="w-full justify-start"
+              >
                 <LogOut className="mr-2 h-4 w-4" />
                 Sign Out
               </Button>
