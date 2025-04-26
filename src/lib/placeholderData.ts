@@ -1,10 +1,10 @@
-
 export type MenuItem = {
   id: string;
   name: string;
   description: string;
   price: number;
   image: string;
+  image_url: string;
   category: string;
   available: boolean;
 };
@@ -16,6 +16,7 @@ export const menuItems: MenuItem[] = [
     description: 'Fresh pasta with our signature sauce, cherry tomatoes, and basil',
     price: 18.99,
     image: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=500&auto=format',
+    image_url: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=500&auto=format',
     category: 'mains',
     available: true
   },
@@ -25,6 +26,7 @@ export const menuItems: MenuItem[] = [
     description: 'Grilled salmon with lemon, herbs, and a side of seasonal vegetables',
     price: 24.99,
     image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500&auto=format',
+    image_url: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500&auto=format',
     category: 'mains',
     available: true
   },
@@ -34,6 +36,7 @@ export const menuItems: MenuItem[] = [
     description: 'Crisp romaine lettuce, parmesan cheese, croutons, and our house dressing',
     price: 12.99,
     image: 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=500&auto=format',
+    image_url: 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=500&auto=format',
     category: 'starters',
     available: true
   },
@@ -43,6 +46,7 @@ export const menuItems: MenuItem[] = [
     description: 'Selection of premium cheeses served with crackers and seasonal fruit',
     price: 16.99,
     image: 'https://images.unsplash.com/photo-1535219597580-eba0e685697f?w=500&auto=format',
+    image_url: 'https://images.unsplash.com/photo-1535219597580-eba0e685697f?w=500&auto=format',
     category: 'starters',
     available: true
   },
@@ -52,6 +56,7 @@ export const menuItems: MenuItem[] = [
     description: 'Warm chocolate cake with a molten center, served with vanilla ice cream',
     price: 9.99,
     image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&auto=format',
+    image_url: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&auto=format',
     category: 'desserts',
     available: true
   },
@@ -61,6 +66,7 @@ export const menuItems: MenuItem[] = [
     description: 'Classic French dessert with a caramelized sugar crust',
     price: 8.99,
     image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&auto=format',
+    image_url: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&auto=format',
     category: 'desserts',
     available: true
   },
@@ -70,6 +76,7 @@ export const menuItems: MenuItem[] = [
     description: 'Creamy arborio rice with wild mushrooms and truffle oil',
     price: 22.99,
     image: 'https://images.unsplash.com/photo-1633964913295-ceb43826e7c7?w=500&auto=format',
+    image_url: 'https://images.unsplash.com/photo-1633964913295-ceb43826e7c7?w=500&auto=format',
     category: 'mains',
     available: true
   },
@@ -79,6 +86,7 @@ export const menuItems: MenuItem[] = [
     description: 'Our special blend of premium spirits with fresh fruit and herbs',
     price: 14.99,
     image: 'https://images.unsplash.com/photo-1607446045710-d5a8b7400489?w=500&auto=format',
+    image_url: 'https://images.unsplash.com/photo-1607446045710-d5a8b7400489?w=500&auto=format',
     category: 'drinks',
     available: true
   }
