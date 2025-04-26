@@ -17,12 +17,12 @@ import GalleryPage from "./pages/admin/GalleryPage";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
+  <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
       <CartProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/order" element={<Order />} />
@@ -35,10 +35,10 @@ const App = () => (
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
+        </TooltipProvider>
       </CartProvider>
-    </TooltipProvider>
-  </QueryClientProvider>
+    </QueryClientProvider>
+  </BrowserRouter>
 );
 
 export default App;
