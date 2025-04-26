@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
@@ -12,6 +13,8 @@ interface MenuItem {
   description: string;
   price: number;
   image_url: string;
+  category?: string;
+  available?: boolean;
 }
 
 const fetchMenuItems = async (): Promise<MenuItem[]> => {
@@ -47,7 +50,10 @@ const Index = () => {
       name: item.name,
       description: item.description,
       price: item.price,
-      image_url: item.image_url
+      image: item.image_url, // Use image_url as the image property
+      image_url: item.image_url,
+      category: item.category || 'default', // Provide default values for required properties
+      available: item.available !== false // Default to true if not specified
     });
   };
 
